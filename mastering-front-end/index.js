@@ -1,16 +1,13 @@
 // Créer 3 ronds de tailles différentes (dont un qui remplacera la souris)
 
 
+const mouse = document.querySelectorAll('.mouse');
+console.log(mouse);
 window.addEventListener('mousemove', (e) => {
-  console.log(`Position X: ${e.pageX}\nPosition Y: ${e.pageY}`);
-  round_1.style.left = e.pageX + 'px';
-  round_1.style.top = e.pageY + 'px';
-  round_2.style.left = e.pageX + 'px';
-  round_2.style.top = e.pageY + 'px';
-  round_3.style.left = e.pageX + 'px';
-  round_3.style.top = e.pageY + 'px';
-  console.log(e.target);
-
+  mouse.forEach((mouse)=> {
+    mouse.style.top = e.pageY + 'px';
+    mouse.style.left = e.pageX + 'px';
+  })
 });
 
 const links = document.querySelectorAll('.links');
